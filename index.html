@@ -3,21 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Website</title>
+    <title>My First Mini App</title>
     <style>
         body {
-            font-family: sans-serif;
-            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+            background-color: #282c34;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
             text-align: center;
-            padding-top: 50px;
         }
-        h1 {
-            color: #333;
+        .card {
+            background: #3a3f4b;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        button {
+            background-color: #61dafb;
+            color: #282c34;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #4fa8c7;
         }
     </style>
 </head>
 <body>
-    <h1>Hello from my Huawei Tablet! 🚀</h1>
-    <p>I am building my first frontend project.</p>
+
+    <div class="card">
+        <h1 id="title">Hello from my Tablet! 👋</h1>
+        <p>Tap the button below to change my vibe.</p>
+        <button onclick="changeVibe()">Click Me</button>
+    </div>
+
+    <script>
+        function changeVibe() {
+            const title = document.getElementById("title");
+            const body = document.body;
+            
+            // This changes the colors and text when clicked!
+            if (body.style.backgroundColor === "rgb(40, 44, 52)") {
+                body.style.backgroundColor = "#ff7b72";
+                title.innerText = "Coding on a Huawei Tablet is Awesome! 🚀";
+            } else {
+                body.style.backgroundColor = "#282c34";
+                title.innerText = "Hello from my Tablet! 👋";
+            }
+        }
+    </script>
+
 </body>
 </html>
